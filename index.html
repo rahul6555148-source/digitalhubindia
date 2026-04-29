@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DigitalHub India - Master AI tools, side hustles, and online earning strategies">
+    <title>DigitalHub India - AI Tools & Online Earning Strategies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0066ff;
+            --dark-bg: #0a0e27;
+            --light-bg: #f8f9fb;
+            --text-dark: #1a1a2e;
+            --text-light: #ffffff;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --accent-blue: #0066ff;
+            --success-color: #10b981;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 60px 0;
+            }
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--text-light);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-dark) 0%, var(--accent-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+            margin: 0;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-icon {
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .search-icon:hover {
+            color: var(--accent-blue);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
+        }
+
+        .cta-nav {
+            background: var(--accent-blue);
+            color: var(--text-light);
+            padding: 10px 28px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cta-nav:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fb 0%, #ffffff 50%, #f0f4ff 100%);
+            padding: 100px 0;
+            min-height: 600px;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+
+        .hero-content .highlight {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0052cc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 0;
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0052cc 100%);
+            border-radius: 12px;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background: #0052cc;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-blue);
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .hero-image {
+                height: 300px;
+                font-size: 80px;
+            }
+        }
+
+        /* Category Cards */
+        .categories {
+            background: var(--text-light);
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .category-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 300px;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.1);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .category-card p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .explore-btn {
+            padding: 10px 20px;
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background: var(--accent-blue);
+            color: var(--text-light);
+        }
+
+        @media (max-width: 1024px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Featured Blog Posts */
+        .featured-posts {
+            background: var(--dark-bg);
+            color: var(--text-light);
+        }
+
+        .featured-posts .section-title {
+            color: var(--text-light);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .post-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .post-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .post-header {
+            height: 180px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0052cc 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .post-category {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--text-light);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-content h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .post-meta {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .post-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+
+        .read-more {
+            color: var(--accent-blue);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 5px;
+        }
+
+        @media (max-width: 1024px) {
+            .posts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            background: var(--light-bg);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .why-card {
+            padding: 40px 30px;
+        }
+
+        .why-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .why-card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-card {
+                padding: 30px 20px;
+            }
+            }
+        
+
+        /* Latest Posts Grid */
+        .latest-posts {
+            background: var(--text-light);
+        }
+
+        .grid-posts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .grid-post-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .grid-post-card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .grid-post-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, var(--accent-blue) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .grid-post-info {
+            padding: 20px;
+        }
+
+        .grid-post-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: var(--text-dark);
+        }
+
+        .grid-post-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .grid-post-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-posts {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-posts {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Case Study Section */
+        .case-study {
+            background: #000000;
+            color: var(--text-light);
+        }
+
+        .case-study-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .case-study-image {
+            background: linear-gradient(135deg, #667eea 0%, var(--accent-blue) 100%);
+            border-radius: 16px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+        }
+
+        .case-study-info h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .case-study-highlight {
+            background: transparent;
+            border-left: none;
+            padding: 0;
+            border-radius: 0;
+            margin-bottom: 20px;
+        }
+
+        .case-study-highlight p {
+            font-size: 18px;
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .case-study-info > p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .case-study-result {
+            display: flex;
+            gap: 60px;
+            margin: 40px 0;
+            justify-content: center;
+        }
+
+        .result-item {
+            flex: none;
+        }
+
+        .result-number {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--accent-blue);
+        }
+
+        .result-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .case-study-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .case-study-image {
+                height: 250px;
+                font-size: 80px;
+            }
+
+            .case-study-info h2 {
+                font-size: 28px;
+            }
+
+            .case-study-result {
+                gap: 40px;
+            }
+
+            .result-number {
+                font-size: 32px;
+            }
+        }
+
+        /* Email Strip */
+        .email-strip {
+            background: #eff6ff;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .email-strip .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .email-strip-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .email-strip-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
+        .email-input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .email-input-group input {
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            width: 240px;
+            transition: all 0.3s ease;
+        }
+
+        .email-input-group input:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+        }
+
+        .email-strip-btn {
+            padding: 12px 24px;
+            background: var(--accent-blue);
+            color: var(--text-light);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .email-strip-btn:hover {
+            background: #0052cc;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 102, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .email-strip {
+                height: auto;
+                padding: 20px 0;
+            }
+
+            .email-strip-text {
+                font-size: 16px;
+                width: 100%;
+            }
+
+            .email-input-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .email-input-group input {
+                width: 100%;
+            }
+
+            .email-strip-btn {
+                width: 100%;
+            }
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--accent-blue) 0%, #0052cc 100%);
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 50px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .final-cta .btn-primary {
+            background: var(--text-light);
+            color: var(--accent-blue);
+            padding: 16px 48px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .final-cta .btn-primary:hover {
+            background: #f0f4ff;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .final-cta .btn-secondary {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .final-cta h2 {
+                font-size: 32px;
+            }
+
+            .final-cta .btn-primary {
+                padding: 14px 40px;
+                font-size: 16px;
+                width: 100%;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #0f0f0f;
+            color: var(--text-light);
+            padding: 80px 0 30px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 60px;
+            margin-bottom: 50px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-section h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #3b82f6;
+            padding-left: 4px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            color: #3b82f6;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .social-links a:hover {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                padding: 60px 0 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: slideUp 0.6s ease;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-blue);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0052cc;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">DigitalHub</div>
+            <div style="display: flex; align-items: center; gap: 35px; margin: 0;">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#ai-tools">AI Tools</a></li>
+                    <li><a href="#side-hustles">Side Hustles</a></li>
+                    <li><a href="#tutorials">Tutorials</a></li>
+                    <li><a href="#case-studies">Case Studies</a></li>
+                </ul>
+                <div class="nav-right">
+                    <span class="search-icon">🔍</span>
+                    <button class="cta-nav">Start Now</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Turn <span class="highlight">AI Tools</span> Into Daily Income</h1>
+                <p>Learn step-by-step strategies to leverage AI tools, build profitable side hustles, and create multiple income streams with proven methods from industry experts.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Start Learning</button>
+                    <button class="btn btn-secondary">View Case Studies</button>
+                </div>
+            </div>
+            <div class="hero-image fade-in">💻</div>
+        </div>
+    </section>
+
+    <!-- Email Strip -->
+    <section class="email-strip">
+        <div class="container">
+            <div class="email-strip-content">
+                <span class="email-strip-text">Want to Earn ₹1000 Online? 🚀</span>
+                <div class="email-input-group">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button class="email-strip-btn">Get Free Guide</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Cards -->
+    <section id="categories" class="categories section-padding">
+        <div class="container">
+            <h2 class="section-title">Explore Our Resources</h2>
+            <div class="categories-grid">
+                <div class="category-card fade-in">
+                    <div>
+                        <div class="card-icon">🤖</div>
+                        <h3>AI Tools</h3>
+                        <p>Master the latest AI technologies and tools to automate your workflow and boost productivity</p>
+                    </div>
+                    <button class="explore-btn">Explore</button>
+                </div>
+                <div class="category-card fade-in">
+                    <div>
+                        <div class="card-icon">💼</div>
+                        <h3>Side Hustles</h3>
+                        <p>Discover proven side business models that generate passive income with minimal investment</p>
+                    </div>
+                    <button class="explore-btn">Explore</button>
+                </div>
+                <div class="category-card fade-in">
+                    <div>
+                        <div class="card-icon">📚</div>
+                        <h3>Tutorials</h3>
+                        <p>Step-by-step guides and video tutorials to help you get started with ease</p>
+                    </div>
+                    <button class="explore-btn">Explore</button>
+                </div>
+                <div class="category-card fade-in">
+                    <div>
+                        <div class="card-icon">📊</div>
+                        <h3>Case Studies</h3>
+                        <p>Real-world success stories with detailed breakdowns and actionable insights</p>
+                    </div>
+                    <button class="explore-btn">Explore</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Blog Posts -->
+    <section id="featured" class="featured-posts section-padding">
+        <div class="container">
+            <h2 class="section-title">Featured Insights</h2>
+            <div class="posts-grid">
+                <div class="post-card fade-in">
+                    <div class="post-header">
+                        <span class="post-category">AI TRENDS</span>
+                    </div>
+                    <div class="post-content">
+                        <h3>ChatGPT for Content Creators: 10X Your Output</h3>
+                        <div class="post-meta">
+                            <span>5 min read</span>
+                            <span>Mar 28, 2026</span>
+                        </div>
+                        <p>Learn how to leverage ChatGPT and AI writing tools to create viral content 10x faster without compromising quality.</p>
+                        <span class="read-more">Read Article →</span>
+                    </div>
+                </div>
+                <div class="post-card fade-in">
+                    <div class="post-header">
+                        <span class="post-category">INCOME STREAMS</span>
+                    </div>
+                    <div class="post-content">
+                        <h3>Passive Income Through AI: The Ultimate Guide</h3>
+                        <div class="post-meta">
+                            <span>8 min read</span>
+                            <span>Mar 25, 2026</span>
+                        </div>
+                        <p>Discover 5 proven methods to generate passive income using AI tools and automation with real income breakdowns.</p>
+                        <span class="read-more">Read Article →</span>
+                    </div>
+                </div>
+                <div class="post-card fade-in">
+                    <div class="post-header">
+                        <span class="post-category">TOOLS & RESOURCES</span>
+                    </div>
+                    <div class="post-content">
+                        <h3>Best AI Tools for Freelancers in 2026</h3>
+                        <div class="post-meta">
+                            <span>6 min read</span>
+                            <span>Mar 22, 2026</span>
+                        </div>
+                        <p>A comprehensive review of the top 15 AI tools that can help you land better clients and charge premium rates.</p>
+                        <span class="read-more">Read Article →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why" class="why-choose-us section-padding">
+        <div class="container">
+            <h2 class="section-title">Why DigitalHub India?</h2>
+            <div class="why-grid">
+                <div class="why-card fade-in">
+                    <span class="why-icon">🚀</span>
+                    <h3>Beginner Friendly</h3>
+                    <p>Start from zero. Our content is designed for complete beginners with no prior experience required.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <span class="why-icon">💡</span>
+                    <h3>Real Methods</h3>
+                    <p>All strategies are tested and verified by real users. No hype, just proven income methods.</p>
+                </div>
+                <div class="why-card fade-in">
+                    <span class="why-icon">📈</span>
+                    <h3>Step-by-Step</h3>
+                    <p>Detailed guides and actionable steps. Follow along at your own pace and track your progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts Grid -->
+    <section id="latest" class="latest-posts section-padding">
+        <div class="container">
+            <h2 class="section-title">Latest From Our Blog</h2>
+            <div class="grid-posts">
+                <div class="grid-post-card fade-in">
+                    <div class="grid-post-image">🚀</div>
+                    <div class="grid-post-info">
+                        <h3>How to Start Your AI SaaS Business</h3>
+                        <div class="grid-post-date">Apr 24, 2026</div>
+                        <p>Complete roadmap from idea to launch, including market validation and funding strategies.</p>
+                    </div>
+                </div>
+                <div class="grid-post-card fade-in">
+                    <div class="grid-post-image">🎨</div>
+                    <div class="grid-post-info">
+                        <h3>Midjourney for Selling Digital Products</h3>
+                        <div class="grid-post-date">Apr 23, 2026</div>
+                        <p>Learn how to generate stunning AI art and sell it online for passive income streams.</p>
+                    </div>
+                </div>
+                <div class="grid-post-card fade-in">
+                    <div class="grid-post-image">📱</div>
+                    <div class="grid-post-info">
+                        <h3>TikTok Monetization: Fast Growth Hacks</h3>
+                        <div class="grid-post-date">Apr 22, 2026</div>
+                        <p>Proven strategies to grow your TikTok account to 100K followers in 90 days.</p>
+                    </div>
+                </div>
+                <div class="grid-post-card fade-in">
+                    <div class="grid-post-image">💰</div>
+                    <div class="grid-post-info">
+                        <h3>Affiliate Marketing with AI Tools</h3>
+                        <div class="grid-post-date">Apr 21, 2026</div>
+                        <p>Scale your affiliate business using AI automation for content creation and promotion.</p>
+                    </div>
+                </div>
+                <div class="grid-post-card fade-in">
+                    <div class="grid-post-image">🔧</div>
+                    <div class="grid-post-info">
+                        <h3>No-Code AI Automation Breakdown</h3>
+                        <div class="grid-post-date">Apr 20, 2026</div>
+                        <p>Build AI workflows without coding using Zapier, Make, and other no-code platforms.</p>
+                    </div>
+                </div>
+                <div class="grid-post-card fade-in">
+                    <div class="grid-post-image">📈</div>
+                    <div class="grid-post-info">
+                        <h3>YouTube Automation Success Blueprint</h3>
+                        <div class="grid-post-date">Apr 19, 2026</div>
+                        <p>Create and monetize automated YouTube channels using AI-generated content.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Highlight -->
+    <section class="case-study section-padding">
+        <div class="container">
+            <div class="case-study-content fade-in">
+                <div class="case-study-image">📊</div>
+                <div class="case-study-info">
+                    <h2>From ₹0 to ₹1000 in 3 Days Using AI</h2>
+                    <div class="case-study-highlight">
+                        <p>Discover how Priya Sharma, a complete beginner, generated her first ₹1000 online using AI tools in just 72 hours—with no experience or technical skills required.</p>
+                    </div>
+                    <div class="case-study-result">
+                        <div class="result-item">
+                            <div class="result-number">₹1000</div>
+                            <div class="result-label">Generated</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-number">72</div>
+                            <div class="result-label">Hours</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">Read Full Case Study →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contact" class="final-cta section-padding">
+        <div class="container fade-in">
+            <h2>Start Your Online Earning Journey 🚀</h2>
+            <div class="cta-buttons">
+                <button class="btn btn-primary">Get Started Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">DigitalHub</div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="#">Email: hello@digitalhub.in</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Privacy</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Data Security</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Terms</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">License</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 40px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <h3 style="font-size: 14px; margin-bottom: 15px; color: rgba(255, 255, 255, 0.7);">FOLLOW US</h3>
+                <div class="social-links" style="justify-content: center;">
+                    <a href="#" title="Facebook">f</a>
+                    <a href="#" title="Twitter">𝕏</a>
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="YouTube">▶</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 DigitalHub India. All rights reserved.</p>
+                <p>Made with ❤️ in India</p>
+            </div>
+        </div>
+    </footer>
+                <p>Made with ❤️ in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Hover effects for cards
+        document.querySelectorAll('.category-card, .post-card, .grid-post-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.3s ease';
+            });
+        });
+    </script>
+</body>
+</html>
