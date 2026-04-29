@@ -944,6 +944,104 @@
             }
         }
 
+        /* Contact Us Section */
+        .contact-us {
+            background: var(--light-bg);
+        }
+
+        .contact-content {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .contact-email {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+            margin: 30px 0;
+        }
+
+        .contact-email h3 {
+            margin: 0;
+            font-size: 18px;
+            color: var(--text-dark);
+        }
+
+        .contact-email a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-email a:hover {
+            text-decoration: underline;
+            color: #0052cc;
+        }
+
+        .response-time {
+            font-size: 15px;
+            color: var(--text-muted);
+            font-style: italic;
+            margin: 20px 0 30px 0;
+        }
+
+        .contact-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .contact-list li {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .contact-closing {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                padding: 30px;
+            }
+
+            .contact-email h3 {
+                font-size: 16px;
+            }
+
+            .contact-content p, .contact-list li {
+                font-size: 15px;
+            }
+        }
+
         /* Footer */
         footer {
             background: #0f0f0f;
@@ -1125,6 +1223,7 @@
                     <li><a href="#side-hustles">Side Hustles</a></li>
                     <li><a href="#tutorials">Tutorials</a></li>
                     <li><a href="#case-studies">Case Studies</a></li>
+                    <li><a href="#contact-us">Contact</a></li>
                 </ul>
                 <div class="nav-right">
                     <span class="search-icon">🔍</span>
@@ -1767,6 +1866,31 @@
             <h2>Start Your Online Earning Journey 🚀</h2>
             <div class="cta-buttons">
                 <button class="btn btn-primary">Get Started Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="contact-us section-padding">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content fade-in">
+                <p>If you have any questions, suggestions, or business inquiries, feel free to reach out.</p>
+                
+                <div class="contact-email">
+                    <h3>📧 Email: <a href="mailto:digitalhubindia@gmail.com">digitalhubindia@gmail.com</a></h3>
+                </div>
+                
+                <p class="response-time">We usually respond within 24–48 hours.</p>
+                
+                <h3 style="margin-top: 30px; margin-bottom: 15px;">You can also connect with us for:</h3>
+                <ul class="contact-list">
+                    <li>🤝 Collaboration</li>
+                    <li>✍️ Guest posts</li>
+                    <li>💼 Business inquiries</li>
+                </ul>
+                
+                <p class="contact-closing">Thank you for visiting DigitalHub India!</p>
             </div>
         </div>
     </section>
