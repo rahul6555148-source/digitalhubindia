@@ -76,7 +76,7 @@ nav {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--black);
+    color: var(--white);
     text-decoration: none;
 }
 
@@ -182,6 +182,87 @@ nav .nav-links a.active {
     font-size: 1.05rem;
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.hero-stats div {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 18px 20px;
+    text-align: center;
+}
+
+.hero-stats strong {
+    display: block;
+    font-size: 1.55rem;
+    color: var(--white);
+    margin-bottom: 6px;
+}
+
+.hero-stats span {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.hero-card {
+    position: relative;
+    display: grid;
+    gap: 18px;
+    padding: 32px;
+    border-radius: 32px;
+    background: rgba(10, 10, 10, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow);
+}
+
+.hero-card span {
+    display: inline-flex;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.hero-card h3 {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    color: var(--white);
+    margin: 0;
+}
+
+.hero-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.hero-card-keypoints {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-card-keypoints span {
+    display: inline-flex;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--accent-blue);
+    font-size: 0.88rem;
+}
+
 .hero-visual {
     min-height: 420px;
     border-radius: 32px;
@@ -254,9 +335,43 @@ nav .nav-links a.active {
     line-height: 1.6;
 }
 
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 1rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+}
+
 .grid {
     display: grid;
     gap: 24px;
+}
+
+.trust-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.trust-card {
+    display: grid;
+    gap: 18px;
+    padding: 28px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.trust-card strong {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.trust-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.8;
 }
 
 .category-grid {
